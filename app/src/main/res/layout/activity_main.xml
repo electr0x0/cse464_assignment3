@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText"
+    android:background="@drawable/gradient_bg">
+
+    <!-- Location Name -->
+    <TextView
+        android:id="@+id/txtView_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Weather Icon -->
+    <ImageView
+        android:id="@+id/weather_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_haze"
+        app:layout_constraintTop_toBottomOf="@id/txtView_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        tools:ignore="ContentDescription" />
+
+    <!-- Temperature -->
+    <TextView
+        android:id="@+id/txtView_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0°C"
+        android:textSize="48sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/weather_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Weather Description -->
+    <TextView
+        android:id="@+id/txtView_weather_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/txtView_temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Additional Info Grid -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/grid_additional_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@id/txtView_weather_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp">
+
+        <!-- Humidity Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            app:cardBackgroundColor="#66FFFFFF"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="8dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                tools:ignore="UseCompoundDrawables">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_humidity"
+                    tools:ignore="ContentDescription" />
+                <TextView
+                    android:id="@+id/txtView_humidity"
+                    android:text="0%"
+                    android:textColor="@android:color/white"
+                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Pressure Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            app:cardBackgroundColor="#66FFFFFF"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="8dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                tools:ignore="UseCompoundDrawables">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_pressure"
+                    tools:ignore="ContentDescription" />
+                <TextView
+                    android:id="@+id/txtView_pressure"
+                    android:text="0 hPa"
+                    android:textColor="@android:color/white"
+                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Wind Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            app:cardBackgroundColor="#66FFFFFF"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="8dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                tools:ignore="UseCompoundDrawables">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_sea_level"
+                    android:contentDescription="Sea Level"
+                    tools:ignore="ContentDescription,HardcodedText" />
+                <TextView
+                    android:id="@+id/txtView_sealevel"
+                    android:text="0 m/s"
+                    android:textColor="@android:color/white"
+                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    tools:ignore="HardcodedText"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.gridlayout.widget.GridLayout>
+
+    <!-- City Input and Button -->
+    <EditText
+        android:id="@+id/et_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter city"
+        android:background="@drawable/input_bg"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:textColorHint="#B3FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/grid_additional_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_set_city"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_margin="10dp"
+        tools:ignore="Autofill,HardcodedText,TextFields" />
+
+    <Button
+        android:id="@+id/btn_set_city"
+        android:layout_height="wrap_content"
+        android:text="Set"
+        android:textColor="@android:color/white"
+        android:background="@drawable/input_bg"
+        app:layout_constraintTop_toTopOf="@id/et_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_city"
+        app:layout_constraintWidth_percent="0.2"
+        android:layout_marginEnd="5dp"
+        tools:ignore="HardcodedText"  android:layout_width="0dp"
+        android:onClick="fetchWeatherData"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

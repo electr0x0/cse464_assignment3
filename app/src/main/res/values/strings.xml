@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherAPI- 2131050</string>
+    <string name="_placeholder_temp">23°C</string>
+    <string name="placeholder_condition">Haze</string>
+    <string name="humidity">Humidity</string>
+    <string name="humidity_percent">64%</string>
+    <string name="pressure">Pressure</string>
+    <string name="pressure_hpa">1013 hPa</string>
+    <string name="wind_Title">Wind</string>
+    <string name="wind_val">0 m/s</string>
+</resources>
